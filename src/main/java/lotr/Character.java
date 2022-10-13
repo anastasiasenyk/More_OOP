@@ -30,4 +30,8 @@ public abstract class Character {
         return hp>0;
     }
 
+    public String info(){
+        return "    " + getClass() + " power: " + getPower() +" hp: " + getHp();
+    }
+
 }

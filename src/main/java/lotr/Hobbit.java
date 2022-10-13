@@ -1,6 +1,5 @@
 package lotr;
 
-
 public class Hobbit extends lotr.Character{
 
     @Override
@@ -16,9 +15,12 @@ public class Hobbit extends lotr.Character{
     }
 
     public void kick (Character c){
-//        super.kick(c);
-//        toCry();
+        toCry();
     }
 
+    private void toCry(){
+        System.out.println("       / Hobbit crying... ;(    =>   +1 to power");
+        setPower(getPower()+1);
+    }
 
 }
