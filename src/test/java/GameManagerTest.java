@@ -1,9 +1,12 @@
+import lotr.Character;
 import lotr.Elf;
 import lotr.GameManager;
 import lotr.Hobbit;
 import lotr.King;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GameManagerTest {
 
@@ -16,11 +19,17 @@ public class GameManagerTest {
 
     @Test
     public void testfight() {
-        game_manager.fight(new Elf(), new King());
+        Character c1 = new Elf();
+        Character c2 = new King();
+        game_manager.fight(c1, c2);
+        assertTrue(c1.isAlive() || c2.getHp()==0);
         System.out.println();
-        game_manager.fight(new King(), new Elf());
-        System.out.println();
-        game_manager.fight(new King(), new Hobbit());
+
+
+        Character c3 = new King();
+        Character c4 = new Hobbit();
+        game_manager.fight(c3, c4);
+        assertTrue(c3.isAlive() || c4.getHp()==0);
     }
 
 }

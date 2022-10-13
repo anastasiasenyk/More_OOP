@@ -31,7 +31,7 @@ public abstract class Character {
     }
 
     public String info(){
-        return "    " + getClass() + " power: " + getPower() +" hp: " + getHp();
+        return "    " + getClass().getSimpleName() + " power: " + getPower() +" hp: " + getHp();
     }
 
 }

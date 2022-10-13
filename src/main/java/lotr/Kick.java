@@ -8,7 +8,11 @@ public class Kick {
         Random rn = new Random();
         if (enemy.getPower()>0){
             enemy.setHp(enemy.getHp() - rn.nextInt(enemy.getPower()));
-            c.setPower(c.getPower()-1);
+            if (c.getPower()>0) {
+                c.setPower(c.getPower() - 1);
+            } else {
+                c.setHp(c.getHp()-1);
+            }
         }
     }
 

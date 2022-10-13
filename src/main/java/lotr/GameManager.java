@@ -7,7 +7,7 @@ public class GameManager {
         String name2 = c2.getClass().getSimpleName();
         System.out.println("Fight between " + name1 + " and " + name2);
 
-        while (c1.getHp()>0 && c2.getHp()>0 && c1.getPower()>=0 && c2.getPower()>=0){
+        while (c1.isAlive() && c2.isAlive() && c1.getPower()>=0 && c2.getPower()>=0){
             System.out.println(" " + name1 + " kick " + name2);
             c1.kick(c2);
             System.out.println(c1.info());
@@ -19,7 +19,7 @@ public class GameManager {
                 System.out.println(c2.info());
             }
         }
-        if (c1.getHp() <= 0 || c1.getPower() < 0){
+        if (c1.isAlive() || c1.getPower() < 0){
             System.out.println("---> " + name2 + " killed " + name1 + " <---");
         } else {
             System.out.println("---> " + name1 + " killed " + name2 + " <---");
