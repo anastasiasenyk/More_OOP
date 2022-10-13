@@ -15,11 +15,7 @@ public class Elf extends lotr.Character{
     }
 
     public void kick (Character c){
-        if (c.getPower()<getPower()){
-            c.setHp(0);
-        } else {
-            c.setPower(c.getPower()-1);
-        }
+        Kick.elf_kick(this, c);
     }
 
 

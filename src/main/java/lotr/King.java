@@ -18,10 +18,6 @@ public class King extends lotr.Noble{
     }
 
     public void kick(Character c){
-        Random rn = new Random();
-        if (c.getPower()>0){
-            c.setHp(c.getHp() - rn.nextInt(c.getPower()));
-        }
-
+        Kick.king_kick(this, c);
     }
 }
